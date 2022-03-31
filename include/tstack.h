@@ -4,39 +4,36 @@
 
 template<typename T, int size>
 class TStack {
-private:
-    T arr[size];
+private: 
+    T arr[100];
     int top;
-public:
+public: 
     TStack() : top(-1) {}
-    bool isEmpty() const{
+    bool isEmpty() const {
         return top == -1;
     }
-    bool isFull() const{
+    bool isFull() const {
         return top == size - 1;
     }
-    void push (T value){
+    void push(T value) {
         if (!isFull()) {
             arr[++top] = value;
-        }
-        else {
+        } else {
             throw "Full!";
         }
     }
 
-    T get() const{
+    T get() const {
         if (!isEmpty()) {
             return arr[top];
-        }
-        else {
+        } else {
             throw "Empty!";
         }
     }
     void pop() {
         if (!isEmpty()) {
             --top;
-        }
-        else {
+        } else {
             throw "Empty!";
         }
     }
