@@ -34,7 +34,7 @@ int calc(char op, int a, int b) {
             return a * b;
         case '/':
             return a/b;
-        case ' ':
+        default:
             return 7;
     }
 }
